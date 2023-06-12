@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sensordataapi
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sensordataapi
+  template:
+    metadata:
+      labels:  
+        app: sensordataapi
+    spec:
+      containers:
+        - image: healthcare/sensordataapi:0.0.1
+          name: sensordataapi
+          ports:
+            - containerPort: 80
+      restartPolicy: Always
