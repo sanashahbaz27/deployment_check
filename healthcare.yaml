@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: List
+items:
+  - path: nifihealth/nifihealth-deployment.yaml
+  - path: nifihealth/NifiHealth-service.yaml
+  - path: sensordataapi/sensordataapi-deployment.yaml
+  - path: sensordataapi/SensorDataApi-service.yaml
+  - path: couchbase/couchbase-deployment.yaml
+  - path: couchbase/couchbase-service.yaml
+  - path: couchbase/couchbase-data-persistentvolumeclaim.yaml
+
