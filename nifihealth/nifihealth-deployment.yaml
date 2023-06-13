@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nifihealth
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nifihealth
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: nifihealth
+    spec:
+      containers:
+        - env:
+            - name: NIFI_WEB_HTTPS_PORT
+              value: "8443"
+            - name: NIFI_WEB_PROXY_HOST
+              value: 75.119.134.195:8556
+            - name: SINGLE_USER_CREDENTIALS_PASSWORD
+              value: Adminadmin@123
+            - name: SINGLE_USER_CREDENTIALS_USERNAME
+              value: admin
+          image: apache/nifi:1.19.0
+          name: nifihealth
+          ports:
+            - containerPort: 8443
+      restartPolicy: Always
+

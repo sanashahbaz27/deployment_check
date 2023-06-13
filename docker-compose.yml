@@ -1,0 +1,32 @@
+version: "3"
+services:
+  NifiHealth:
+    image: apache/nifi:1.19.0
+    container_name: nifi-stack
+    restart: always
+    ports:
+      - "8556:8443"
+    environment:
+      - SINGLE_USER_CREDENTIALS_USERNAME=admin
+      - SINGLE_USER_CREDENTIALS_PASSWORD=Adminadmin@123
+      - NIFI_WEB_HTTPS_PORT=8443
+      - NIFI_WEB_PROXY_HOST=75.119.134.195:8556
+  couchbase:
+    image: couchbase/server:enterprise-7.0.0
+    container_name: couchbase-stack
+    ports:
+      - "7091-7094:8091-8094"   # Couchbase Web Console and REST API
+      - "12207-12210:11207-11210"   # Couchbase data and view ports
+    volumes:
+      - couchbase_data:/opt/couchbase/var
+    environment:
+      - COUCHBASE_ADMINISTRATOR_USERNAME=Aceso
+      - COUCHBASE_ADMINISTRATOR_PASSWORD=adminadmin123
+  SensorDataApi:
+    image: healthcare/sensordataapi:0.0.1
+    container_name: SensorData-stack
+    restart: always
+    ports:
+      - "7888:80"
+volumes:
+  couchbase_data:

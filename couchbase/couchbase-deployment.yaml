@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: couchbase
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: couchbase
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: couchbase
+    spec:
+      containers:
+        - env:
+            - name: COUCHBASE_ADMINISTRATOR_PASSWORD
+              value: adminadmin123
+            - name: COUCHBASE_ADMINISTRATOR_USERNAME
+              value: Aceso
+          image: couchbase/server:enterprise-7.0.0
+          name: couchbase-stack
+          ports:
+            - containerPort: 8091
+            - containerPort: 8092
+            - containerPort: 8093
+            - containerPort: 8094
+            - containerPort: 11207
+            - containerPort: 11208
+            - containerPort: 11209
+            - containerPort: 11210
+          resources: {}
+          volumeMounts:
+            - mountPath: /opt/couchbase/var
+              name: couchbase-data
+      volumes:
+        - name: couchbase-data
+          persistentVolumeClaim:
+            claimName: couchbase-data
