@@ -1,10 +1,10 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: nifi
+  name: nifihealth
   namespace: default
   labels:
-    name: nifi
+    name: nifihealth
   annotations:
     kubernetes.io/ingress.class: "nginx"    
     cert-manager.io/cluster-issuer: "letsencrypt-prod"
@@ -21,8 +21,10 @@ spec:
   - host: nifi.example.com
     http:
       paths:
-      - path: "/"
+      - path: /
         pathType: ImplementationSpecific
         backend:
-            serviceName: nifihealth
-            servicePort: 8443
+          service:
+            name: nifihealth
+            port:
+              number: 8443
