@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: nifihealth
 spec:
+  type: NodePort
   ports:
     - port: 8556
       targetPort: 8443
+      nodePort: 30000
   selector:
     app: nifihealth
