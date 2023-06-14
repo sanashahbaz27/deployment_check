@@ -12,27 +12,27 @@ spec:
     - name: "7092"
       port: 7092
       targetPort: 8092
-      nodePort: 30002
+      nodePort: 30001
     - name: "7093"
       port: 7093
       targetPort: 8093
-      nodePort: 30003
+      nodePort: 30001
     - name: "7094"
       port: 7094
       targetPort: 8094
-      nodePort: 30004
+      nodePort: 30001
     - name: "12207"
       port: 12207
       targetPort: 11207
-      nodePort: 30005
+      nodePort: 30001
     - name: "12208"
       port: 12208
       targetPort: 11208
-      nodePort: 30006
+      nodePort: 30001
     - name: "12209"
       port: 12209
       targetPort: 11209
-      nodePort: 30007
+      nodePort: 30001
     - name: "12210"
       port: 12210
       targetPort: 11210
