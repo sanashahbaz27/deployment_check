@@ -36,6 +36,6 @@ spec:
     - name: "12210"
       port: 12210
       targetPort: 11210
-      nodePort: 30008
+      nodePort: 30001
   selector:
     app: couchbase
