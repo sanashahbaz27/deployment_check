@@ -8,5 +8,8 @@ spec:
     - port: 7091
       targetPort: 8091
       nodePort: 30001
+      port: 7092
+      targetPort: 8092
+      nodePort: 30001
   selector:
     app: couchbase
