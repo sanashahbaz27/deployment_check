@@ -22,6 +22,7 @@ spec:
     http:
       paths:
       - path: "/"
+        pathType: ImplementationSpecific
         backend:
             serviceName: nifihealth
             servicePort: 8443
