@@ -3,9 +3,11 @@ kind: Service
 metadata:
   name: sensordataapi
 spec:
+  type: NodePort
   ports:
     - port: 7888
       targetPort: 80
+      nodePort: 30003
   selector:
     app: sensordataapi
 
