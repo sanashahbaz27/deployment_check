@@ -13,7 +13,7 @@ spec:
       nodePort: 30003
     - port: 7093
       targetPort: 8093
-      nodePort: 30003
+      nodePort: 30004
     - port: 7094
       targetPort: 8094
       nodePort: 30005
