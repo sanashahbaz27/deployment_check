@@ -5,28 +5,36 @@ metadata:
 spec:
   type: NodePort
   ports:
-    - port: 7091
+    - name: "7091"
+      port: 7091
       targetPort: 8091
       nodePort: 30002
-    - port: 7092
+    - name: "7092"
+      port: 7092
       targetPort: 8092
       nodePort: 30003
-    - port: 7093
+    - name: "7093"
+      port: 7093
       targetPort: 8093
       nodePort: 30004
-    - port: 7094
+    - name: "7094"
+      port: 7094
       targetPort: 8094
       nodePort: 30005
-    - port: 12207
+    - name: "12207"
+      port: 12207
       targetPort: 11207
       nodePort: 30006 
-    - port: 12208
+    - name: "12208"
+      port: 12208
       targetPort: 11208
       nodePort: 30007
-    - port: 12209
+    - name: "12209"
+      port: 12209
       targetPort: 11209
       nodePort: 30008
-    - port: 12210
+    - name: "12210"
+      port: 12210
       targetPort: 11210
       nodePort: 30009
   selector:
