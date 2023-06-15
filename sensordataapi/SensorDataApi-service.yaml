@@ -8,7 +8,7 @@ spec:
     - protocol: TCP
       port: 7888
       targetPort: 80
-      nodePort: 30004
+      nodePort: 30010
   selector:
     app: sensordataapi
 
