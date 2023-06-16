@@ -13,7 +13,7 @@ spec:
         app: sensordataapi
     spec:
       containers:
-        - image: acesoaudio/sensordataapi:0.0.1
+        - image: acesoaudio/sensordataapi:0.0.2
           name: sensordataapi
           ports:
             - containerPort: 80
